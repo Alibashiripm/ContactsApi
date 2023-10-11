@@ -1,0 +1,27 @@
+﻿@model  MyContactsApi.Models.ContactViewModel
+@{
+    ViewBag.Title = "AddNewContact";
+}
+
+<h2>AddNewContact</h2>
+
+@using (Html.BeginForm("AddNewContact", "Contacts", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.fullName)
+        @Html.TextBoxFor(m => m.fullName)
+        @Html.ValidationMessageFor(m => m.fullName)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.TextBoxFor(m => m.PhoneNumber)
+        @Html.ValidationMessageFor(m => m.PhoneNumber)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CompanyName)
+        @Html.TextBoxFor(m => m.CompanyName)
+        @Html.ValidationMessageFor(m => m.CompanyName)
+    </div>
+    <input type="submit" value="Add Contact" />
+}
